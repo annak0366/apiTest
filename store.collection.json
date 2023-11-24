@@ -1,0 +1,377 @@
+{
+	"id": "6b0a536e-6b78-43b6-b096-a5f3543b46d8",
+	"name": "store",
+	"timestamp": "2023-11-24T15:49:26.709Z",
+	"collection_id": "29382520-7cf277bb-4898-4025-a216-ad6f06b2b133",
+	"folder_id": "29382520-6048fc97-ce3c-4be9-934d-c12661154d9c",
+	"environment_id": "0",
+	"totalPass": 30,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-11-24T15:49:25.635Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "e31ae916-3eb3-4385-9784-4251b3ed81fe",
+			"name": "Create product",
+			"url": "http://localhost:3000/products",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 201": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Response time is less than 200ms": true,
+					"Status code is 201": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "e92abe16-bf0a-4bd1-8ae4-57c613a670e4",
+			"name": "List products",
+			"url": "http://localhost:3000/products",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response should match JSON schema": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should match JSON schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Response time is less than 200ms": true,
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response should match JSON schema": true
+				}
+			]
+		},
+		{
+			"id": "10f4a0df-fa1b-43ec-a1dd-6225ca2370c3",
+			"name": "Pagination",
+			"url": "http://localhost:3000/products?page=1&pageSize=2",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status is 200": true,
+				"Response time is less than 200ms": true,
+				"Exactly two products on the page": true,
+				"JSON schema validation": true
+			},
+			"testPassFailCounts": {
+				"Response status is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Exactly two products on the page": {
+					"pass": 1,
+					"fail": 0
+				},
+				"JSON schema validation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Response status is 200": true,
+					"Response time is less than 200ms": true,
+					"Exactly two products on the page": true,
+					"JSON schema validation": true
+				}
+			]
+		},
+		{
+			"id": "59545681-4070-4711-9921-ebea5442b2eb",
+			"name": "Sorting",
+			"url": "http://localhost:3000/products?sortOrder=DESC&sortKey=price",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Sorting ASC by name": true,
+				"Test Sorting DESC by name": true,
+				"Test Sorting ASC by id": true,
+				"Test Sorting DESC by id": true,
+				"Test Sorting ASC by price": true,
+				"Test Sorting DESC by price": true
+			},
+			"testPassFailCounts": {
+				"Test Sorting ASC by name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test Sorting DESC by name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test Sorting ASC by id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test Sorting DESC by id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test Sorting ASC by price": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test Sorting DESC by price": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Test Sorting ASC by name": true,
+					"Test Sorting DESC by name": true,
+					"Test Sorting ASC by id": true,
+					"Test Sorting DESC by id": true,
+					"Test Sorting ASC by price": true,
+					"Test Sorting DESC by price": true
+				}
+			]
+		},
+		{
+			"id": "f4646d7b-7050-4f15-ada6-4390169d2738",
+			"name": "Get product by ID",
+			"url": "http://localhost:3000/products/3",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Product has correct ID": true,
+				"JSON schema validation": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Product has correct ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"JSON schema validation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Response time is less than 200ms": true,
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Product has correct ID": true,
+					"JSON schema validation": true
+				}
+			]
+		},
+		{
+			"id": "2f6a2d97-448d-4fff-85f6-9ead8c732994",
+			"name": "Update product",
+			"url": "http://localhost:3000/products",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Product was updated successfully": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Product was updated successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Response time is less than 200ms": true,
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Product was updated successfully": true
+				}
+			]
+		},
+		{
+			"id": "6eaae510-9b6b-4bb7-b86c-97d51481acb5",
+			"name": "Remove product by ID",
+			"url": "http://localhost:3000/products/5",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Verify product was deleted": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify product was deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Response time is less than 200ms": true,
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Verify product was deleted": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 61,
+	"collection": {
+		"requests": [
+			{
+				"id": "e31ae916-3eb3-4385-9784-4251b3ed81fe",
+				"method": "POST"
+			},
+			{
+				"id": "e92abe16-bf0a-4bd1-8ae4-57c613a670e4",
+				"method": "GET"
+			},
+			{
+				"id": "10f4a0df-fa1b-43ec-a1dd-6225ca2370c3",
+				"method": "GET"
+			},
+			{
+				"id": "59545681-4070-4711-9921-ebea5442b2eb",
+				"method": "GET"
+			},
+			{
+				"id": "f4646d7b-7050-4f15-ada6-4390169d2738",
+				"method": "GET"
+			},
+			{
+				"id": "2f6a2d97-448d-4fff-85f6-9ead8c732994",
+				"method": "PUT"
+			},
+			{
+				"id": "6eaae510-9b6b-4bb7-b86c-97d51481acb5",
+				"method": "DELETE"
+			}
+		]
+	}
+}
