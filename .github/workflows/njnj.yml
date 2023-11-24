@@ -22,4 +22,4 @@ jobs:
       run: npm install -g newman
 
     - name: Run Postman Tests
-      run: newman run Postman-newman-ghActions\petstore.collection.json
+      run: newman run petstore.collection.json
